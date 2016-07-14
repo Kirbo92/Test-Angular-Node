@@ -1,0 +1,36 @@
+<!doctype html>  
+<html lang="en" ng-app="quantion">  
+<head>  
+    <meta charset="UTF-8">
+    <title>Test AngularJS + NodeJS</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+</head>  
+<body ng-controller="controlador">  
+    <div class="container"> 
+        <div class="jumbotron text-center">
+            <h1>Hotel <span class="label label-info">{{ clientes.length }}</span></h1>
+        </div>
+        <div id="client-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="checkbox" ng-repeat="client in clientes">
+                    <label>
+                        <input type="checkbox" ng-click="deleteClient(client._id)"> {{ client.name }} 
+                    </label>
+                 </div>
+             </div>
+         </div>
+            <div id="todo-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg text-center" placeholder="Inserta un nuevo cliente" ng-model="formData.name">
+                    </div>
+                    <button class="btn btn-primary btn-lg" ng-click="createClient()">Añadir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>  
+</html>
